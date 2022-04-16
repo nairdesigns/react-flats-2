@@ -14,7 +14,7 @@ const FlatList = (props) => {
       );
     });
   };
-  debugger;
+
   return <div className="flat-list">{renderList()}</div>;
 };
 
