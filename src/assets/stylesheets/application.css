@@ -39,7 +39,6 @@ body {
   background-color: red;
   border-radius: 50%;
 }
-// _cards.scss
 .card {
   height: 230px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
@@ -47,9 +46,10 @@ body {
   background-position: center;
   color: white;
   position: relative;
-  &.active {
+  min-width: 83px !important;
+  /* &.active {
     border: 10px solid red;
-  }
+  } */
 }
 .card-user {
   position: absolute;
