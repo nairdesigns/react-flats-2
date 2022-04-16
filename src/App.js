@@ -16,7 +16,21 @@ export default class App extends Component {
     this.state = {
       selectedFlat: flats[0],
       flats,
+      lng: -70.9,
+      lat: 42.35,
+      zoom: 9,
     };
+    this.mapContainer = React.createRef();
+  }
+
+  componentDidMount() {
+    const { lng, lat, zoom } = this.state;
+    const map = new mapboxgl.Map({
+      container: this.mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [lng, lat],
+      zoom: zoom,
+    });
   }
 
   // center() {
