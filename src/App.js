@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import FlatList from "./components/flat_list";
 import React, { Component } from "react";
