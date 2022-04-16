@@ -27,7 +27,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        App
         <FlatList
           flats={this.state.flats}
           selectedFlat={this.state.selectedFlat}

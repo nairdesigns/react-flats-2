@@ -46,10 +46,11 @@ body {
   background-position: center;
   color: white;
   position: relative;
-  min-width: 83px !important;
-  /* &.active {
+  min-width: 343px;
+  margin: 3px;
+  &.active {
     border: 10px solid red;
-  } */
+  }
 }
 .card-user {
   position: absolute;
