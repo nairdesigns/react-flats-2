@@ -11,12 +11,18 @@ export default class App extends Component {
       flats,
     };
   }
-
+  selectFlat = (index) => {
+    this.setState({ selectedFlat: flats[index] });
+  };
   render() {
     return (
       <div>
         App
-        <FlatList />
+        <FlatList
+          flats={this.state.flats}
+          selectedFlat={this.state.selectedFlat}
+          selectFlat={this.selectFlat}
+        />
       </div>
     );
   }
