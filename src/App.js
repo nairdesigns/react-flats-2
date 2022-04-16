@@ -50,7 +50,7 @@ export default class App extends Component {
           selectedFlat={this.state.selectedFlat}
           selectFlat={this.selectFlat}
         />
-        <div className="map-container"></div>
+        <div ref={this.mapContainer} className="map-container"></div>
       </div>
     );
   }
