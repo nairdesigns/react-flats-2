@@ -1,17 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
 import FlatList from "./components/flat_list";
+import React, { Component } from "react";
 
-function App() {
-  selectFlat = (index) => {
-    this.setState({ selectedFlat: flats[index] });
-  };
-  return (
-    <div className="App">
-      <FlatList />
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        App
+        <FlatList />
+      </div>
+    );
+  }
 }
 
-export default App;
+// function App() {
+
+//   return (
+//     <div className="App">
+//       <FlatList />
+//     </div>
+//   );
+// }
+
+// export default App;
