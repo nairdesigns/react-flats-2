@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react";
 import React, { Component } from "react";
 import flats from "./data/flats";
 import Marker from "./components/marker";
-import mapboxgl from "!mapbox-gl";
+import mapboxgl from "mapbox-gl";
 mapboxgl.accessToken =
   "pk.eyJ1IjoibmFpcmRlc2lnbnMiLCJhIjoiY2t6N3oxZGtyMWY5ejJ2cGhtc283bWtoYiJ9.2Xm0lvF_0guXITdMgqokVg";
 
@@ -24,7 +24,7 @@ export default class App extends Component {
   //     lat: this.state.selectedFlat.lat,
   //     lng: this.state.selectedFlat.lng,
   //   };
-  }
+  // }
   // selectFlat = (index) => {
   //   this.setState({ selectedFlat: flats[index] });
   // };
