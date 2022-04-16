@@ -50,7 +50,15 @@ export default class App extends Component {
           selectedFlat={this.state.selectedFlat}
           selectFlat={this.selectFlat}
         />
-        <div ref={this.mapContainer} className="map-container"></div>
+
+        <div ref={this.mapContainer} className="map-container">
+          {" "}
+          <div className="sidebar">
+            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom:{" "}
+            {this.state.zoom}
+          </div>
+          E
+        </div>
       </div>
     );
   }
