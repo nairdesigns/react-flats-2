@@ -23,25 +23,25 @@ export default class App extends Component {
     this.mapContainer = React.createRef();
   }
 
+  center() {
+    return {
+      lat: this.state.selectedFlat.lat,
+      lng: this.state.selectedFlat.lng,
+    };
+  }
   componentDidMount() {
     const { lng, lat, zoom } = this.state;
     const map = new mapboxgl.Map({
       container: this.mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [lng, lat],
+      center: [this.state.selectedFlat.lng, this.state.selectedFlat.lat],
       zoom: zoom,
     });
   }
-
-  // center() {
-  //   return {
-  //     lat: this.state.selectedFlat.lat,
-  //     lng: this.state.selectedFlat.lng,
-  //   };
-  // }
-  // selectFlat = (index) => {
-  //   this.setState({ selectedFlat: flats[index] });
-  // };
+  selectFlat = (index) => {
+    this.setState({ selectedFlat: flats[index] });
+    console.log(flats[index]);
+  };
   render() {
     return (
       <div>
@@ -54,8 +54,8 @@ export default class App extends Component {
         <div ref={this.mapContainer} className="map-container">
           {" "}
           <div className="sidebar">
-            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom:{" "}
-            {this.state.zoom}
+            Longitude: {this.state.selectedFlat.lng} | Latitude:{" "}
+            {this.state.selectedFlat.lat} | Zoom: {this.state.zoom}
           </div>
           E
         </div>
