@@ -2,6 +2,7 @@ import "./App.css";
 import FlatList from "./components/flat_list";
 // import GoogleMapReact from "google-map-react";
 import { useRef, useEffect, useState } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 import React, { Component } from "react";
 import flats from "./data/flats";
