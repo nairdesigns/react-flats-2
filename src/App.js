@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import flats from "./data/flats";
 import Marker from "./components/marker";
 import mapboxgl from "mapbox-gl";
-// import Map from "react-map-gl";
+import Map from "react-map-gl";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibmFpcmRlc2lnbnMiLCJhIjoiY2t6N3oxZGtyMWY5ejJ2cGhtc283bWtoYiJ9.2Xm0lvF_0guXITdMgqokVg";
@@ -53,7 +53,15 @@ export default class App extends Component {
           selectedFlat={this.state.selectedFlat}
           selectFlat={this.selectFlat}
         />
-
+        <Map
+          initialViewState={{
+            longitude: -122.4,
+            latitude: 37.8,
+            zoom: 14,
+          }}
+          style={{ width: 600, height: 400 }}
+          mapStyle="mapbox://styles/mapbox/streets-v9"
+        />
         <div ref={this.mapContainer} className="map-container">
           {" "}
           <div className="sidebar">
