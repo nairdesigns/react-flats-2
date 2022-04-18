@@ -1,28 +1,14 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const createExpoWebpackConfigAsync = require("@expo/webpack-config");
 
-module.exports = {
-  entry: path.join(__dirname, "src", "index.js"),
-  output: {
-    path: path.resolve(__dirname, "dist"),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
+module.exports = async function(env, argv) {
+  const config = await createExpoWebpackConfigAsync(
+    {
+      ...env,
+      babel: {
+        dangerouslyAddModulePathsToTranspile: ["@ui-kitten/components"],
       },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
-    }),
-  ],
+    },
+    argv
+  );
+  return config;
 };
